@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+:root {
+  --bg-primary: #41444b;
+  --bg-second: #52575d;
+  --text-color: #f6f4e6;
+}
+
+body {
+  /* perspective: 1000px; */
+}
+
+/********* Start My Framework **********/
+.start__game {
+  background-color: var(--bg-primary);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/********* End   My Framework **********/
+
+.box__start {
+  background-color: var(--bg-second);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 330px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* Inspired from  https://tailwindcss.com/docs/box-shadow */
+}
+
+.hardness {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.hardness label {
+  text-transform: capitalize;
+  font-weight: 700;
+  color: #fff;
+}
+
+#level {
+  background: transparent;
+  outline: none;
+  border: none;
+  color: var(--text-color);
+  background: var(--bg-primary);
+  padding: 5px 30px 5px 5px;
+  text-transform: capitalize;
+}
+
+.mode__box {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  grid-gap: 5px;
+}
+
+.mode__item {
+  width: 50px;
+  height: 50px;
+  background: #7a7a7a;
+  flex-shrink: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.mode__item img {
+  width: 34px;
+  margin: 6px;
+}
+
+.mode__box .selected {
+  border: 2px solid yellow;
+  background: #41444b;
+}
+
+.disable {
+  background: rgb(255 255 255 / 54%);
+  cursor: not-allowed;
+}
+
+.center {
+  text-align: center;
+}
+
+#start__btn {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--bg-primary);
+  display: inline-block;
+  margin-top: 20px;
+  background: #f6f4e6;
+  padding: 8px 30px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Start Game */
+.game__box {
+  background-color: var(--bg-primary);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.time {
+  font-size: 2.5em;
+  color: var(--text-color);
+  margin: 10px 0;
+}
+
+.time::before {
+  font-size: 2.5em;
+  color: var(--text-color);
+  margin: 10px 0;
+}
+
+.card__wrapper {
+  display: grid;
+  grid-template: repeat(4, 150px) / repeat(4, 120px);
+  grid-gap: 5px;
+  /* perspective: 500px; */
+}
+
+.card {
+  width: 120px;
+  height: 150px;
+  /* background: rgb(0 0 0 / 32%); */
+  position: relative;
+  border-radius: 3px;
+}
+
+.card > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  backface-visibility: hidden;
+  border: 2px solid #222222;
+  border-radius: 3px;
+  background: rgb(0 0 0 / 32%);
+}
+
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* display: none; */
+}
+
+.back img {
+  width: 100px;
+}
+
+.front {
+  background: ;
+  z-index: 2;
+}
+
+.front::after {
+  content: "\f522";
+  font-family: "Font Awesome 5 Duotone";
+  color: yellow;
+  font-size: 3em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.back {
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+/* .card:hover .front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: rotateY(0);
+} */
+
+.is_fliped .front {
+  transform: rotateY(180deg);
+}
+
+.is_fliped .back {
+  transform: rotateY(0);
+}
+
+.is_matched .front {
+  transform: rotateY(180deg);
+}
+
+.is_matched .back {
+  transform: rotateY(0);
+}
+
+/* Javascript */
+.disable_clicking {
+  pointer-events: none;
+}
