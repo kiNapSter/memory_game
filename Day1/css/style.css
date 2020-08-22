@@ -18,7 +18,8 @@ body {
 }
 
 /********* Start My Framework **********/
-.start__game {
+.start__game,
+.end__game {
   background-color: var(--bg-primary);
   width: 100%;
   height: 100vh;
@@ -29,7 +30,8 @@ body {
 
 /********* End   My Framework **********/
 
-.box__start {
+.box__start,
+.end__game__box {
   background-color: var(--bg-second);
   padding: 20px;
   border-radius: 5px;
@@ -124,12 +126,18 @@ body {
   font-size: 2.5em;
   color: var(--text-color);
   margin: 10px 0;
+  position: absolute;
+  left: 50px;
+  top: 110px;
 }
 
 .time::before {
-  font-size: 2.5em;
+  content: "\f2f2";
+  /* font-size: 2.5em; */
   color: var(--text-color);
-  margin: 10px 0;
+  margin-right: 10px;
+  font-family: "Font Awesome 5 Pro";
+
 }
 
 .card__wrapper {
@@ -147,7 +155,7 @@ body {
   border-radius: 3px;
 }
 
-.card > div {
+.card>div {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -212,6 +220,44 @@ body {
 
 .is_matched .back {
   transform: rotateY(0);
+}
+
+/* End game */
+.end__game__box {
+  width: 215px;
+  box-sizing: content-box;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.timing {
+  font-size: 2.3rem;
+  text-align: center;
+}
+
+.incorrect_answer {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100px;
+  padding: 5px 0;
+  border-radius: 30px;
+  background-color: var(--bg-primary);
+  color: yellow;
+  margin: 10px auto
+}
+
+.end__game__box a {
+  position: absolute;
+  bottom: 0;
+  text-decoration: none;
+  color: #41444b;
+  background: #fff331;
+  padding: 8px 20px;
+  border-radius: 5px;
+  left: 50%;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+  transform: translate(-50%, 50%);
 }
 
 /* Javascript */
